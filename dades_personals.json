@@ -1,0 +1,95 @@
+{
+    "Persones": [
+        {
+            "dni": "82062398P",
+            "nom": "Maria",
+            "cognoms": "Font Delmau",
+            "data_naixement": "05/06/2000",
+            "dorsal": "1"
+        },
+        {
+            "dni": "15944123V",
+            "nom": "Arnau",
+            "cognoms": "Ramos Pic",
+            "data_naixement": "22/03/2002",
+            "dorsal": "2"
+        },
+        {
+            "dni": "01319311P",
+            "nom": "Feliu",
+            "cognoms": "Bosch Colomenc",
+            "data_naixement": "06/10/1997",
+            "dorsal": "3"
+        },
+        {
+            "dni": "81457906W",
+            "nom": "Antonia",
+            "cognoms": "Rama Angosto",
+            "data_naixement": "15/11/1999",
+            "dorsal": "4"
+        },
+        {
+            "dni": "02569301V",
+            "nom": "Usain",
+            "cognoms": "Bolt Bolt",
+            "data_naixement": "21/08/1986",
+            "dorsal": "5"
+        },
+        {
+            "dni": "54772409W",
+            "nom": "Biel",
+            "cognoms": "Reig Coll",
+            "data_naixement": "23/2/2018",
+            "dorsal": "6"
+        },
+        {
+            "dni": "48549407H",
+            "nom": "Martina",
+            "cognoms": "Jason Derulo",
+            "data_naixement": "6/9/2019",
+            "dorsal": "7"
+        },
+        {
+            "dni": "43253255F",
+            "nom": "Josep",
+            "cognoms": "Port Aventura",
+            "data_naixement": "24/5/1933",
+            "dorsal": "8"
+        },
+        {
+            "dni": "42352355V",
+            "nom": "Antoni",
+            "cognoms": "Mart Coloma",
+            "data_naixement": "14/12/1930",
+            "dorsal": "9"
+        },
+        {
+            "dni": "53254456A",
+            "nom": "Carmen",
+            "cognoms": "Dolores Monte",
+            "data_naixement": "7/4/1941",
+            "dorsal": "10"
+        },
+        {
+            "dni": "43243224G",
+            "nom": "Thomas",
+            "cognoms": "Scot Yellow",
+            "data_naixement": "21/3/1921",
+            "dorsal": "11"
+        },
+        {
+            "dni": "54365466K",
+            "nom": "Jeniffer",
+            "cognoms": "Stop Watch",
+            "data_naixement": "23/12/1933",
+            "dorsal": "12"
+        },
+        {
+            "dni": "42456477H",
+            "nom": "Daniel",
+            "cognoms": "Ros Park",
+            "data_naixement": "24/12/2017",
+            "dorsal": "13"
+        }
+    ]
+}

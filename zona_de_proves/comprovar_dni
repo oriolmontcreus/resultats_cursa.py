@@ -1,0 +1,44 @@
+
+def comprovar_digits(n):
+    contador_digits = 0
+    if n == 0: 
+        contador = 1
+    else:
+        contador = 1
+        while (n>=10):
+            contador += 1
+            n = n//10
+        return contador
+    
+
+def validar_dni():
+    while True:
+        try:
+            dni_sense_lletra = int(input("Entra el dni (sense la última lletra): "))
+            if comprovar_digits(dni_sense_lletra) != 8:
+                print("[!] Error [!] Has d'entrar 8 digits!")
+                continue
+        except ValueError: #Exepció quan l'usuari no entra un int
+            print("[!] Error [!] Només s'admeten nombres!")
+            # Tornar a començar el loop
+            continue
+        else:
+            # el dni entrat és vàlid
+            trobar_lletra(dni_sense_lletra)
+            break
+
+def trobar_lletra(dni_sense_lletra):
+    
+    diccionari_lletres = {0:"T",1:"R",2:"W",3:"A",4:"G",5:"M",6:"Y",7:"F",8:"P",9:"D",10:"X",
+               11:"B",12:"N",13:"J",14:"Z",15:"S",16:"Q",17:"V",18:"H",19:"L",
+               20:"C",21:"K",22:"E"}
+    
+    resta = dni_sense_lletra%23
+    lletra = diccionari_lletres[resta]
+    dni = str(dni_sense_lletra) + lletra
+ 
+    print("DNI:", dni)
+ 
+validar_dni()
+
+

@@ -1,0 +1,174 @@
+{ "Controls": [
+                 {
+                    "descripcio": "Font del canyo",
+                    "dorsals": [
+                                {
+                                    "dorsal": "1",
+                                    "timestamp": "2345"
+                                },
+                                {
+                                    "dorsal": "2",
+                                    "timestamp": "2349"
+                                },
+                                {
+                                    "dorsal": "3",
+                                    "timestamp": "3221"
+                                },
+                                {
+                                    "dorsal": "4",
+                                    "timestamp": "4562"
+                                },
+                                {
+                                    "dorsal": "5",
+                                    "timestamp": "2212"
+                                },
+                                {
+                                    "dorsal": "6",
+                                    "timestamp": "4762"
+                                },
+                                {
+                                    "dorsal": "7",
+                                    "timestamp": "3762"
+                                },
+                                {
+                                    "dorsal": "8",
+                                    "timestamp": "4532"
+                                },
+                                {
+                                    "dorsal": "9",
+                                    "timestamp": "5324"
+                                },
+                                {
+                                    "dorsal": "10",
+                                    "timestamp": "4253"
+                                },
+                                {
+                                    "dorsal": "11",
+                                    "timestamp": "3953"
+                                },
+                                {
+                                    "dorsal": "12",
+                                    "timestamp": "4352"
+                                },
+                                {
+                                    "dorsal": "13",
+                                    "timestamp": "5177"
+                                }
+                            ]               
+                    },
+                    {
+                        "descripcio": "Mines del Sant Pare",
+                        "dorsals": [
+                            {
+                                "dorsal": "1",
+                                "timestamp": "3456"
+                            },
+                            {
+                                "dorsal": "2",
+                                "timestamp": "3542"
+                            },
+                            {
+                                "dorsal": "3",
+                                "timestamp": "3577"
+                            },
+                            {
+                                "dorsal": "4",
+                                "timestamp": "4962"
+                            },
+                            {
+                                "dorsal": "5",
+                                "timestamp": "3082"
+                            },
+                            {
+                                "dorsal": "6",
+                                "timestamp": "5362"
+                            },
+                            {
+                                "dorsal": "7",
+                                "timestamp": "5243"
+                            },
+                            {
+                                "dorsal": "8",
+                                "timestamp": "5562"
+                            },
+                            {
+                                "dorsal": "9",
+                                "timestamp": "5824"
+                            },
+                            {
+                                "dorsal": "10",
+                                "timestamp": "4653"
+                            },
+                            {
+                                "dorsal": "11",
+                                "timestamp": "4359"
+                            },
+                            {
+                                "dorsal": "12",
+                                "timestamp": "5152"
+                            },
+                            {
+                                "dorsal": "13",
+                                "timestamp": "5677"
+                            }
+                        ]
+                    },
+                    {
+                        "descripcio": "Meta",
+                        "dorsals": [
+                            {
+                                "dorsal": "1",
+                                "timestamp": "4589"
+                            },
+                            {
+                                "dorsal": "2",
+                                "timestamp": "4325"
+                            },
+                            {
+                                "dorsal": "3",
+                                "timestamp": "4224"
+                            },
+                            {
+                                "dorsal": "4",
+                                "timestamp": "5423"
+                            },
+                            {
+                                "dorsal": "5",
+                                "timestamp": "3822"
+                            },
+                            {
+                                "dorsal": "6",
+                                "timestamp": "5662"
+                            },
+                            {
+                                "dorsal": "7",
+                                "timestamp": "5441"
+                            },
+                            {
+                                "dorsal": "8",
+                                "timestamp": "6591"
+                            },
+                            {
+                                "dorsal": "9",
+                                "timestamp": "6628"
+                            },
+                            {
+                                "dorsal": "10",
+                                "timestamp": "5951"
+                            },
+                            {
+                                "dorsal": "11",
+                                "timestamp": "5787"
+                            },
+                            {
+                                "dorsal": "12",
+                                "timestamp": "5693"
+                            },
+                            {
+                                "dorsal": "13",
+                                "timestamp": "5986"
+                            }
+                        ]
+                    }
+                ]
+}
