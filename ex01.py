@@ -5,6 +5,7 @@
 #Menú fet amb inquirer
 #https://python-inquirer.readthedocs.io/en/latest/examples.html
 
+import sys
 import os
 import json
 from datetime import date, datetime
@@ -14,6 +15,7 @@ init(autoreset=True) #Autoreset dels colors del colorama (per a més control del
 
 FILE_CLASSIFICACIO = "./classificacio.json"
 FILE_DADES_PERSONALS = "./dades_personals.json"
+FOLDER_EXPORTS = "./exports/"
 dades = []
 classificacio = []
 
@@ -43,7 +45,7 @@ def afegir_a_fitxer_dades(noves_dades, nom_fitxer='dades_personals.json'):
      
 #Submenú per l'apartat de classificacions
 def submenu_classificacions(classificacio, dades):
-    os.system('cls') #Esborrar el contingut anterior de la consola
+    os.system('cls' if os.name == 'nt' else 'clear') #Esborrar el contingut anterior de la consola
     opcions_submenu = [
         inquirer.List('submenu_classificacions',
                       message="Tria una opció del submenú",
@@ -63,7 +65,6 @@ def submenu_classificacions(classificacio, dades):
 
 #Funcions relacionades amb la validació d'un dni
 def comprovar_digits(n):
-    contador_digits = 0
     if n == 0: 
         contador = 1
     else:
@@ -121,7 +122,7 @@ def validar_data_naixement():
 
 #Donar d'alta una persona en dades_personals.json
 def donar_alta(dades):
-    os.system('cls') #Esborrar contingut anterior de la consola
+    os.system('cls' if os.name == 'nt' else 'clear') #Esborrar contingut anterior de la consola
     dorsal = str(trobar_dorsal_disponible(dades))
     dni = trobar_lletra(validar_dni())
     preguntes = [
@@ -168,15 +169,15 @@ def imprimir_classificacio(dades, classificacio):
         #Mostrar símbol de medalla pels corredors del podium (top 3)
         match (i):
             case 1:
-                print(u"\U0001F947 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
+                print(" " + u"\U0001F947 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
             case 2:
-                print(u"\U0001F948 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
+                print(" " + u"\U0001F948 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
             case 3:
-                print(u"\U0001F949 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
+                print(" " + u"\U0001F949 " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
                 
         #Mostrar temps del corredors que no estàn en el top 3
         if i > 3:        
-            print(" "+ str(i)+ " " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
+            print(" "+ ('{:02}'.format(i))+ " " + Fore.GREEN + buscar_nom(dades, dorsal).ljust(25), "Temps: ", format_temps_classificacio(timestamp))
 
 #Classificar segons dorsal i edat
 def dorsal_edat(buscar_edat, dorsal_persona, dades):
@@ -246,31 +247,40 @@ def submenu_volcar(classificacio, dades):
     respostes_submenu = inquirer.prompt(opcions_submenu)
     
     if respostes_submenu['submenu_volcar'] == 'Classificació global':
-        imprimir_classificacio(dades, volcar_classificacions(dades, classificacio, 999))
+        volcar_classificacio(classificacions(classificacio, dades, 999))
     
     if respostes_submenu['submenu_volcar'] == 'Classificació menors de 10 anys':
-        volcar_classificacions(dades, classificacio, 10)
+        volcar_classificacio(classificacions(classificacio, dades, 10))
             
     if respostes_submenu['submenu_volcar'] == 'Classificació majors de 70 anys':
-        volcar_classificacions(dades, classificacio, 70)
+        volcar_classificacio(classificacions(classificacio, dades, 70))
 
-def volcar_classificacions(dades, classificacio, id_edat):
-    
-    match (id_edat):
-        case 999:
-            classificacio(classificacio, dades, 999)
-        case 70:
-            classificacio(classificacio, dades, 70)
-        case 10:
-            classificacio(classificacio, dades, 10)
-          
+#Volcar una classificació amb format en un fitxer .json
+def volcar_classificacio(classificacio_seleccionada):
+    i = 1
+    classificacio_amb_format = {}
+    posicions = {}
+    Persones = []
+    for dorsal, timestamp in classificacio_seleccionada:
+        classificacio_amb_format["dorsal"] = dorsal
+        classificacio_amb_format["timestamp"] = timestamp
+        classificacio_amb_format["posicio"] = i
+        Persones.append(classificacio_amb_format)
+        i+=1
+        classificacio_amb_format = {}
+    posicions['posicions'] = Persones
+    nom_fitxer = input("[" + Fore.GREEN + "*" +  Fore.RESET + "] " + "Entra el nom del fitxer on vols guardar la classificació: ")
+    fitxer_de_sortida = open(FOLDER_EXPORTS+nom_fitxer+".json", "w")        
+    json.dump(posicions, fitxer_de_sortida, indent = 4)
+   
 def main():
     classificacio, dades = obrir_fitxers()
     print(
         Fore.BLUE + """
-    │━━━━━━━━━━━━━━━━━━━━━━━│
-    │ Resultats d'una cursa │
-    │━━━━━━━━━━━━━━━━━━━━━━━│
+    ┌─────────────────────┐
+    │Resultats d'una cursa│
+    └─────────────────────┘
+    
     """, Fore.YELLOW + """fet per: Oriol Mont\n"""
     )
     while True:
@@ -290,7 +300,7 @@ def main():
             donar_alta(dades)
             continue
         if respostes['menu_principal'] == 'Volcar classificacions':
-            volcar_classificacions(dades, classificacio)
+            submenu_volcar(classificacio, dades)
             continue
         if respostes['menu_principal'] == 'Sortir del programa':
             break
