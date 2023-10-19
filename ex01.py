@@ -1,4 +1,3 @@
-#DNI = 41589407w
 # N = (D+A+M) mod 5
 # N = (07+04+06) mod 5 = 2 ---------> RESULTATS D’UNA CURSA
 
