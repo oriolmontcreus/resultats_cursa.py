@@ -12,11 +12,9 @@ Once you have Python installed, you can download this script by cloning this rep
 
 ## Usage
 
-To use this script, run it from the command line with the following arguments:
+To use this script, open the project folder with your terminal of choice and run resultats_cursa.py using:
 
-**python resultats_cursa.py <input_file>**
-
-Where `<input_file>` is the path to the CSV file containing the race results.
+**python resultats_cursa.py 
 
 ## Contributing
 
