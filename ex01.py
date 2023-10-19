@@ -1,5 +1,4 @@
-# N = (D+A+M) mod 5
-# N = (07+04+06) mod 5 = 2 ---------> RESULTATS D’UNA CURSA
+#RESULTATS D’UNA CURSA
 
 #Menú fet amb inquirer
 #https://python-inquirer.readthedocs.io/en/latest/examples.html
