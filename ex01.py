@@ -1,11 +1,9 @@
-#DNI = 41589407w
 # N = (D+A+M) mod 5
 # N = (07+04+06) mod 5 = 2 ---------> RESULTATS D’UNA CURSA
 
 #Menú fet amb inquirer
 #https://python-inquirer.readthedocs.io/en/latest/examples.html
 
-import sys
 import os
 import json
 from datetime import date, datetime
