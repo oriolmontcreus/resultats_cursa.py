@@ -14,7 +14,7 @@ Once you have Python installed, you can download this script by cloning this rep
 
 To use this script, open the project folder with your terminal of choice and run resultats_cursa.py using:
 
-**python resultats_cursa.py 
+**python resultats_cursa.py**
 
 ## Contributing
 
